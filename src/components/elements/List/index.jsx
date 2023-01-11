@@ -15,13 +15,13 @@ function List({ ListData, fullScreen }) {
                 to={path}
                 className={`p-2 flex justify-center font-bold hover:text-[#2ed192]`}
               >
-                {fullScreen && <span className="mt-3 px-4">{title}</span>}
+                {fullScreen && <span className="mt-3  px-4">{title}</span>}
                 {/* <ion-icon
                   name={el.icon}
                   className="mt-2 "
                   style={{ margin: "10px", fontSize: "1.6rem" }}
                 /> */}
-                <Icon customClass="hover:text-[#2ed192] text-[#e5e7eb]"/>
+                <Icon customClass="hover:text-[#2ed192] "/>
               </NavLink>
             </li>
           );

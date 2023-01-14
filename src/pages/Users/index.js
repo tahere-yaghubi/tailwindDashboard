@@ -9,7 +9,7 @@ function Users() {
     getUser();
   }, []);
   function getUser() {
-    axios.get("https://jsonplaceholder.typicode.com/users/5").then((res) => {
+    axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
       setUsers(res.data);
     });
   }
@@ -27,9 +27,11 @@ function Users() {
           className="w-full  bg-white px-10 py-10  m-2 shadow-lg  border mx-auto sm:-mx-6 lg:-mx-8 rounded-md"
         >
           <div className="py-4 h-auto">
-            {users.map((user) => {
-              return <UserCard user={user} />;
-            })}
+            {users
+              .map((user) => {
+                return <UserCard user={user} />;
+              })
+              .splice(1, 5)}
           </div>
         </div>
       </div>

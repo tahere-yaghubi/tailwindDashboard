@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import { SIDEBAR_ROUTES } from "../../../constants/SIDEBAR_ROUTES";
 import { context } from "../../../context/contextProvider";
+import { ROUTES } from "../../../Routes";
 import List from "../../elements/List";
 import Profile from "../Profile";
 
@@ -19,23 +19,23 @@ function Sidebar({ isMobile }) {
       >
         <div className="pb-4 flex flex-col justify-around w-full">
           <div className="text-center pb-16">
-          {fullScreen ? (
-            <button
-              className="text-3xl hover:text-[#2ed192]"
-              onClick={() => setFullScreen(false)}
-            >
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-          ) : (
-            <button
-              onClick={() => setFullScreen(true)}
-              className="text-3xl hover:text-[#2ed192]"
-            >
-              <ion-icon name="menu-outline"></ion-icon>
-            </button>
-          )}
-           </div>
-          <List ListData={SIDEBAR_ROUTES} fullScreen={fullScreen} />
+            {fullScreen ? (
+              <button
+                className="text-3xl hover:text-[#2ed192]"
+                onClick={() => setFullScreen(false)}
+              >
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            ) : (
+              <button
+                onClick={() => setFullScreen(true)}
+                className="text-3xl hover:text-[#2ed192]"
+              >
+                <ion-icon name="menu-outline"></ion-icon>
+              </button>
+            )}
+          </div>
+          <List ListData={ROUTES} fullScreen={fullScreen} />
         </div>
         <div className="w-full border-t pt-9 border-[#596072]">
           <Profile fullScreen={fullScreen} />
@@ -58,7 +58,7 @@ function Sidebar({ isMobile }) {
               </button>
 
               <List
-                ListData={SIDEBAR_ROUTES}
+                ListData={ROUTES}
                 fullScreen={fullScreen}
                 mobileMenuOpen={mobileMenuOpen}
               />

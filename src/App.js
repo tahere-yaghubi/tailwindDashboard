@@ -52,7 +52,6 @@ const ROUTES = [
     Component: Dates,
     path: "/dates",
   },
- 
 ];
 
 function App() {
@@ -63,17 +62,17 @@ function App() {
       <Routes>
         <Route path="*" element={<Login />} />
       </Routes>
-    )} else {
+    );
+  } else {
     return (
-      <div className="bg-[#f3f4f9] flex text-black flex-col-reverse h-screen w-full lg:flex-row md:flex-row sm:flex-col overflow-hidden relative">
+      <div className="flex text-black flex-col-reverse h-screen w-full lg:flex-row md:flex-row sm:flex-col overflow-hidden relative">
         <div className="w-full h-screen flex flex-grow flex-col ">
           <MainNav />
           <Routes>
             {ROUTES.map(({ path, Component, id }) => (
-              <Route key={id} path={path} element={<Component/>} />
+              <Route key={id} path={path} element={<Component />} />
             ))}
-            <Route path="*" element={<NotFound/>}/>
-          
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
 

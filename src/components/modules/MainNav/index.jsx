@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+
 import { getItemLocalStorage } from "../../../Utilities/getItemLocalStorage";
+import { Context } from "../../../context/contextProvider";
 import Search from "../Search";
 
 function MainNav() {
@@ -9,6 +10,7 @@ function MainNav() {
   const [userName, setUserName] = useState(
     localStorage.getItem("userName") || ""
   );
+  const { logout } = useContext(Context);
 
   useEffect(() => {
     console.log(userName);
@@ -41,7 +43,7 @@ function MainNav() {
             </span>
           </button>
 
-          <button className="hover:text-slate-400">
+          <button className="hover:text-slate-400" onClick={logout}>
             <ion-icon name="exit-outline">
               {/* <Navigate to="/login" /> */}
             </ion-icon>

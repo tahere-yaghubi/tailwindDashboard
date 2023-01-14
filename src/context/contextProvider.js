@@ -13,12 +13,14 @@ function ContextProvider(props) {
 
   const ToggleMenu = () => setMenuOpen(!menuOpen);
   const login = () => setIsLogin(true);
+  const logout = () => setIsLogin(false);
 
   const contextValue = {
     // menuOpen,
     // ToggleMenu,
     login,
     isLogin,
+    logout,
   };
 
   return (

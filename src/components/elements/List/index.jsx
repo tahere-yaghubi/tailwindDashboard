@@ -1,30 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import NavItem from "../NavItem";
 
 function List({ ListData, fullScreen }) {
   return (
     <>
       <ul className="hidden md:block w-full">
-        {ListData.map(({ Icon, title, path, id }) => {
+        {ListData.map((item) => {
           return (
             <li
-              key={id}
+              key={item.id}
               className={`w-full flex ${
                 fullScreen ? "justify-end" : "justify-center"
               } flex-row  align-center  border-r-4 hover:border-r-4 border-[#1d212d] hover:border-[#2ed192] px-10`}
             >
-              <NavLink
-                to={path}
-                className={`p-3 flex justify-center items-center font-bold hover:text-[#2ed192]`}
-              >
-                {fullScreen && <span className=" px-4">{title}</span>}
-                {/* <ion-icon
-                  name={el.icon}
-                  className="mt-2 "
-                  style={{ margin: "10px", fontSize: "1.6rem" }}
-                /> */}
-                <Icon customClass="hover:inherit" />
-              </NavLink>
+              <NavItem item={item} fullScreen={fullScreen}/>
             </li>
           );
         })}

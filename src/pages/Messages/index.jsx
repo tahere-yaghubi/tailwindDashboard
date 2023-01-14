@@ -1,23 +1,16 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-
+import axios from "axios";
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Messages() {
-const [users,setUsers] = useState([])
-
-
-useEffect(()=>{
-
-  getUser()
-},[])
-  function getUser(){
-    axios.get('https://randomuser.me/api/?results=5000').then(res => {
-    // console.log(res.data,"res")
-  })
-  }
   return (
-    <div className='md:w-1/2 sm:w-full h-36 borderh-36  m-2 text-center flex justify-center items-center rounded-lg shadow-lg bg-white '>hello</div>
-    )
+    <div className="flex items-center justify-center flex-col">
+      <h1 className="text-zinc-500 text-xl">صفحه مورد نظر یافت نشد</h1>
+      <Link to={"/"}>
+        <span className="text-[#2ed192]">صفحه اصلی </span>
+      </Link>
+    </div>
+  );
 }
 
-export default Messages
+export default Messages;

@@ -4,7 +4,6 @@ import "./App.css";
 import Main from "./components/modules/Main";
 import MainNav from "./components/modules/MainNav";
 import Sidebar from "./components/modules/Sidebar";
-import { SIDEBAR_ROUTES } from "./constants/SIDEBAR_ROUTES";
 import { Context } from "./context/contextProvider";
 import NotFound from "./pages/404";
 import Cart from "./pages/Cart";
